@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>게임</title>
+    <link rel="stylesheet" href="styles/game.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function startWord() {
+        const word = document.getElementById("word").innerText;
+        // 코드캠프
+        const lastWord = word[word.length - 1]; // 프
+
+        const myword = document.getElementById("myword").value;
+        // 프랑스
+        const firstWord = myword[0]; //프
+
+        if (lastWord === firstWord) {
+          //맞았을때 정답 코드 작성하기
+          document.getElementById("result").innerText = "게임에서 이겼습니다!";
+          document.getElementById("myword").value = "";
+          document.getElementById("word").innerText = myword;
+        } else {
+          //틀렸을때 정답 코드 작성하기
+          document.getElementById("result").innerText = "게임에서 졌습니다!";
+          console.log(`${firstWord} ${lastWord}`);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__header">
+        <span class="title">GAME</span
+        ><span class="subtitle">TODAY CHOICE</span>
+      </div>
+
+      <div class="wrapper__word">
+        <div class="wrapper__word__header">
+          <div><img src="Images/word.png" /></div>
+          <div class="title">끝말잇기</div>
+          <div id="word" class="word_title">코드캠프</div>
+        </div>
+        <div class="wrapper__word__body">
+          <input
+            id="myword"
+            class="word_input"
+            type="text"
+            placeholder="단어를 입력하세요."
+          />
+          <button onclick="startWord()" class="search_button">검색</button>
+        </div>
+        <div id="result" class="wrapper__word__footer">결과!</div>
+      </div>
+
+      <div class="wrapper__lotto">
+        <div class="wrapper__lotto__header">
+          <div><img src="Images/lotto.png" /></div>
+          <div class="title">LOTTO</div>
+          <div class="lotto_title">버튼을 누르세요.</div>
+        </div>
+        <div class="wrapper__lotto__body">
+          <div class="lotto_numbers">
+            <span>3</span>
+            <span>5</span>
+            <span>10</span>
+            <span>24</span>
+            <span>30</span>
+            <span>34</span>
+          </div>
+        </div>
+        <div class="wrapper__lotto__footer">
+          <button class="lotto_button">Button</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

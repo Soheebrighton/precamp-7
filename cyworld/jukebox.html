@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>주크박스</title>
+    <link rel="stylesheet" href="styles/jukebox.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      function playMusic3() {
+        const music = new Audio("bensound-gogetit.mp3");
+        music.play();
+      }
+
+      function playMusic1() {
+        const music = new Audio("bensound-romantic.mp3");
+        music.play();
+      }
+
+      function playMusic2() {
+        const music = new Audio("bensound-adaytoremember.mp3");
+        music.play();
+      }
+
+      // Set check or unchecked all checkboxes
+      function checkAll(e) {
+        const checkboxes = document.getElementsByName("check");
+
+        if (e.checked) {
+          for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+          }
+        } else {
+          for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__header">
+        <span class="title">오늘의 추천곡</span
+        ><span class="subtitle">TODAY'S CHOICES</span>
+      </div>
+
+      <div class="wrapper__top-album">
+        <div class="wrapper__top-album__choice1">
+          <div class="img">
+            <img src="Images/romantic.jpeg" />
+          </div>
+          <div class="title">Romantic</div>
+          <div class="artist">Benjamin Tissot</div>
+          <div class="play">
+            <button onclick="playMusic1()">▶︎</button>
+          </div>
+        </div>
+
+        <div class="wrapper__top-album__choice2">
+          <div class="img"><img src="Images/yanperchuk.jpeg" /></div>
+          <div class="title">Breathe Deep</div>
+          <div class="artist">Yan Perchuk</div>
+          <div class="play"><button onclick="playMusic2()">▶︎</button></div>
+        </div>
+        <div class="wrapper__top-album__choice3">
+          <div class="img"><img src="Images/danphillipson.jpeg" /></div>
+          <div class="title">Go Get It</div>
+          <div class="artist">Dan Phillipson</div>
+          <div class="play"><button onclick="playMusic3()">▶︎</button></div>
+        </div>
+      </div>
+
+      <div class="wrapper__header2">
+        <span class="title">나의 플레이리스트</span
+        ><span class="subtitle">MY PLAYLIST</span>
+      </div>
+
+      <div class="wrapper__bgm-list">
+        <table
+          class="table"
+          style="undefined;table-layout: fixed; width: 464px"
+        >
+          <colgroup>
+            <col style="width: 35px" />
+            <col style="width: 30px" />
+            <col style="width: 222px" />
+            <col style="width: 139px" />
+          </colgroup>
+          <thead class="table-top">
+            <tr>
+              <th>
+                <input
+                  type="checkbox"
+                  name="showhide"
+                  onchange="checkAll(this)"
+                />
+              </th>
+              <th>번호</th>
+              <th class="top-title">곡명</th>
+              <th class="top-artist">아티스트</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="checkbox">
+                <input
+                  type="checkbox"
+                  name="check"
+                  id="check_1"
+                  onchange="checkChange();"
+                />
+              </td>
+              <td class="number">1</td>
+              <td>
+                <label for="check_1">I Always Wanna Die (Sometimes)</label>
+              </td>
+              <td>The 1975</td>
+            </tr>
+            <tr>
+              <td class="checkbox">
+                <input
+                  type="checkbox"
+                  name="check"
+                  id="check_2"
+                  onchange="checkChange();"
+                />
+              </td>
+              <td class="number">2</td>
+              <td><label for="check_2">Apocalypse</label></td>
+              <td><label for="check_2">Cigarettes after sex</label></td>
+            </tr>
+            <tr>
+              <td class="checkbox">
+                <input
+                  type="checkbox"
+                  name="check"
+                  id="check_3"
+                  onchange="checkChange();"
+                />
+              </td>
+              <td class="number">3</td>
+              <td>Dacing in the kitchen</td>
+              <td>LANY</td>
+            </tr>
+            <tr>
+              <td class="checkbox">
+                <input
+                  type="checkbox"
+                  name="check"
+                  id="check_4"
+                  onchange="checkChange();"
+                />
+              </td>
+              <td class="number">4</td>
+              <td>Virtual insanity</td>
+              <td>Jamiroquai</td>
+            </tr>
+            <tr>
+              <td class="checkbox">
+                <input
+                  type="checkbox"
+                  name="check"
+                  id="check_5"
+                  onchange="checkChange();"
+                />
+              </td>
+              <td class="number">5</td>
+              <td>Twenty Something</td>
+              <td>Nightly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+<div class="top">
+    <input type="checkbox" />
+    <span>번호</span>
+    <span>곡명</span>
+    <span>아티스트</span>
+  </div>
+  <div class="">
+    <input type="checkbox" /> <span>1</span>
+    <span>I Always Wanna Die (Sometimes)</span>
+    <span>The 1975</span>
+  </div>
+  <div class="">
+    <input type="checkbox" /> <span>2</span>
+    <span>Apocalypse</span>
+    <span>Cigarettes after sex</span>
+  </div>
+  <div class="">
+    <input type="checkbox" /> <span>3</span>
+    <span>Dacing in the kitchen</span>
+    <span>LANY</span>
+  </div>
+  <div class="">
+    <input type="checkbox" /> <span>4</span>
+    <span>Virtual insanity</span>
+    <span>Jamiroquai</span>
+  </div> -->

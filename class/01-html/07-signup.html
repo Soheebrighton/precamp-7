@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>이벤트 감지</title>
+    <script>
+      function checkValidation() {
+        const email = document.getElementById("email").value;
+        const password1 = document.getElementById("password1").value;
+        const password2 = document.getElementById("password2").value;
+
+        if (email !== "" && password1 !== "" && password2 !== "") {
+          document.getElementById("myButton").style.backgroundColor = "yellow";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- onkeyup 키 떼는순간 작동 -->
+    <input
+      type="text"
+      id="email"
+      placeholder="이메일을 입력해 주세요."
+      onchange="checkValidation()"
+      onkeyup="onchange()"
+    /><br />
+    <input
+      type="password"
+      id="password1"
+      placeholder="비밀번호를 입력해 주세요."
+      onchange="checkValidation()"
+      onkeyup="onchange()"
+    /><br />
+    <input
+      type="password"
+      id="password2"
+      placeholder="비밀번호를 확인해 주세요."
+      onchange="checkValidation()"
+      onkeyup="onchange()"
+    /><br />
+    <button id="myButton">회원가입</button>
+  </body>
+</html>

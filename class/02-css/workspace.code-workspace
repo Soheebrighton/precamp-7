@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "momentum",
+      "path": "../../../../nodeIntro/momentum"
+    },
+    {
+      "name": "projects",
+      "path": "../../../../nodeIntro/projects"
+    },
+    {
+      "name": "07-Pig-Game",
+      "path": "../../../../Downloads/complete-javascript-course-master/07-Pig-Game"
+    },
+    {
+      "name": "nodeIntro",
+      "path": "../../../../nodeIntro"
+    },
+    {
+      "name": "Vanilla JS Project",
+      "path": "../../../Vanilla JS Project"
+    },
+    {
+      "name": "precamp-7기",
+      "path": "../../../precamp-7기"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "precamp-7기"
+  }
+}
